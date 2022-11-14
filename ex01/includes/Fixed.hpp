@@ -6,7 +6,7 @@
 /*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 11:19:46 by chaidel           #+#    #+#             */
-/*   Updated: 2022/11/08 12:53:44 by chaidel          ###   ########.fr       */
+/*   Updated: 2022/11/14 17:00:01 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ class Fixed {
 		static const int	_bits = 8;
 };
 
-std::ostream& operator<<(std::ostream& floux, Fixed const& num);
+std::ostream& operator<<(std::ostream& flux, Fixed const& num);
 
 #endif
