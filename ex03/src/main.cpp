@@ -3,28 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:35:34 by root              #+#    #+#             */
-/*   Updated: 2022/11/10 20:08:39 by root             ###   ########.fr       */
+/*   Updated: 2022/11/20 12:59:47 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Fixed.hpp"
+#include "../includes/Point.hpp"
 
+/*
+ *	Tests:
+ *			a(1,1), b(0.5,-1), c(2,0.5)	=>	p(1,1)
+ *											p(2,2)
+ *											p(-1,1)
+ *											p(-0.6,-0.5)
+ *
+ *			a(2,-1), b(1,1.5), c(-1,-1)	=>	p(1,1)
+ *											p(-0.5,-1.1)
+ *											p(-0.5,0.5)
+ *											p(0,-0.5)
+*/
 int	main(void)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-
+	Point	a(1,1);
+	Point	b(0.5,-1);
+	Point	c(2,0.5);
+	Point	p(-1,-0.6);
+	if (bsp(a, b, c, p))
+		std::cout << "in"<< std::endl;
+	else
+		std::cout << "out" << std::endl;
 	return (0);
 }

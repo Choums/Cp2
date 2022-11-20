@@ -1,4 +1,4 @@
-NAME    = fixed
+NAME    = bsp
 OS		= $(shell uname)
 
 # directories
@@ -9,6 +9,8 @@ OBJDIR        =    ./obj
 # src / obj files
 SRC        =	main.cpp\
 				Fixed.cpp\
+				Point.cpp\
+				bsp.cpp
 				
 
 OBJ        = $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))

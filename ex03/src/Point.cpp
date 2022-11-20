@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:41:07 by root              #+#    #+#             */
-/*   Updated: 2022/11/13 17:09:02 by root             ###   ########.fr       */
+/*   Updated: 2022/11/17 12:43:59 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ Point::~Point()
 {};
 
 /*	Accessors */
-Fixed	Point::getXvalue(void)
+Fixed	Point::getXvalue(void) const
 {
 	return (this->_x);
 }
 
-Fixed	Point::getYvalue(void)
+Fixed	Point::getYvalue(void) const
 {
 	return (this->_y);
 }
@@ -42,6 +42,10 @@ Fixed	Point::getYvalue(void)
 /*	Assignement Oerator overload */
 Point& Point::operator=(Point const& obj)
 {
-	this->_x = obj.getXvalue();
-	this->_y = obj.getYvalue();
+	if (this != &obj)
+	{
+		this->_x = obj.getXvalue();
+		this->_y = obj.getYvalue();
+	}
+	return (*this);
 }

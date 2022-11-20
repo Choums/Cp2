@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: chaidel <chaidel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:41:05 by root              #+#    #+#             */
-/*   Updated: 2022/11/13 17:11:50 by root             ###   ########.fr       */
+/*   Updated: 2022/11/20 13:00:09 by chaidel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,19 @@ class Point {
 		Point(float const x, float const y);
 		Point(Point const& cpy);
 		~Point();
-
-		/*	Methods */
-
 		
 		/*	Assignement Oerator overload */
 		Point&	operator=(Point const& obj);
 
 		/*	Accessors */
-		Fixed	getXvalue(void);
-		Fixed	getYvalue(void);
+		Fixed	getXvalue(void) const;
+		Fixed	getYvalue(void) const;
 
 	private:
-		Fixed	_y;
 		Fixed	_x;
+		Fixed	_y;
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif
